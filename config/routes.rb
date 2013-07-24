@@ -3,5 +3,5 @@ TimeIn::Application.routes.draw do
 
   get "/" => 'pages#index'
 
-  post '/time_location', to: 'time#create'
+  post '/time_location', to: 'times#create'
 end

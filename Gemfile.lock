@@ -39,6 +39,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    geocoder (1.1.8)
+    geokit (1.6.5)
+      multi_json
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -120,8 +123,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  geocoder
+  geokit
   jbuilder (~> 1.2)
   jquery-rails
+  json
   pg
   pry
   quiet_assets
