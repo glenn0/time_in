@@ -29,6 +29,6 @@ class TimesController < ApplicationController
   end
 
   def make_time_pretty(raw_time)
-    session[:time] = raw_time.to_time.strftime("%l:%M %p, %b %e")
+    session[:time] = raw_time.to_time.strftime("%l:%M %P on %A %B %e")
   end
 end
