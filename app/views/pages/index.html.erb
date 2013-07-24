@@ -26,7 +26,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
       </div>
       <div class="span12">
         <% if session[:location] %>
-          <img src="http://www.glennvillega.com/files/aimhand.gif"><%= session[:location] %>
+          <%= session[:location] %>
+          <br>
+          <%= session[:lat] %>
+          <br>
+          <%= session[:long] %>          
         <% end %>
       </div>      
     </div>
