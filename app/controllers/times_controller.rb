@@ -1,12 +1,14 @@
 require 'net/http'
 require 'pry'
+require 'time'
 
 class TimesController < ApplicationController
 
   def create
-    session[:location] = params[:searchTextField]
+    session[:location] = params[:searchTextField]  #  Saves Google Places autocomplete to session.
     geocode_location_to_latlong(session[:location])
-    lookup_time_for_location(session[:lat], session[:long])
+    lookup_raw_time_for_location(session[:lat], session[:long])
+    make_time_pretty(session[:raw_time])
     redirect_to root_path
   end
 
@@ -18,11 +20,15 @@ class TimesController < ApplicationController
     false # For now, fail silently...
   end
 
-  def lookup_time_for_location(lat, long)
+  def lookup_raw_time_for_location(lat, long)
     response = Net::HTTP.get_response(URI.parse("http://ws.geonames.org/timezoneJSON?lat=#{Rack::Utils.escape(lat)}&lng=#{Rack::Utils.escape(long)}&style=full"))    
     json = ActiveSupport::JSON.decode(response.body)
-    session[:time] = json["time"]
+    session[:raw_time] = json["time"]
   rescue
     false # For now, fail silently...
+  end
+
+  def make_time_pretty(raw_time)
+    session[:time] = raw_time.to_time.strftime("%l:%M %p, %b %e")
   end
 end
