@@ -25,4 +25,4 @@ class TimesController < ApplicationController
   rescue
     false # For now, fail silently...
   end
-endr
+end
