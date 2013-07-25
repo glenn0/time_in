@@ -1,5 +1,4 @@
 require 'net/http'
-require 'pry'
 require 'time'
 
 class TimesController < ApplicationController
