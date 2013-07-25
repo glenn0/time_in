@@ -11,6 +11,7 @@ class TimesController < ApplicationController
     redirect_to root_path
   end
 
+private
   def geocode_location_to_latlong(location)
     response = Net::HTTP.get_response(URI.parse("http://maps.googleapis.com/maps/api/geocode/json?address=#{Rack::Utils.escape(location)}&sensor=false"))
     json = ActiveSupport::JSON.decode(response.body)

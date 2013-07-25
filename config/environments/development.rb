@@ -28,4 +28,7 @@ TimeIn::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # Do not compress assets
+  config.assets.compress = false
 end
