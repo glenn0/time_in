@@ -1,0 +1,37 @@
+body {
+    background-image: url(random_grey_variations.png);
+    background-repeat:repeat;
+    color: #6E6E6E;
+}
+
+table {
+    background-color: #ebebeb;
+}
+
+a {
+  text-decoration: none;
+  color: #56B5C4;
+}
+
+a:hover,
+a:focus {
+  color: #0084E3;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #6E6E6E;
+}
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #F2F2F2;
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url('<%= asset_path('fontawesome-webfont.eot') %>');
+  src: url('<%= asset_path('fontawesome-webfont.eot') + '?#iefix' %>') format('eot'), url('<%= asset_path('fontawesome-webfont.woff') %>') format('woff'), url('<%= asset_path('fontawesome-webfont.ttf') %>') format('truetype'), url('<%= asset_path('fontawesome-webfont.svg') + '#FontAwesome' %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

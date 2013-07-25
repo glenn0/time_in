@@ -21,11 +21,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
           <%#= submit_tag "Gimme", class: "btn" %>
         <% end %>
       </div>
-      <div class="well text-center">
-        <% if session[:time] %>
-          <%= session[:time] %> 
-        <% end %>       
-      </div>
+      <% if session[:time] %>
+        <div class="well text-center">
+          <%= session[:time] %>      
+        </div>
+      <% end %>  
       <div class="text-right">
         <%= link_to 'Made by Glenn.', "http://twitter.com/glenn0" %>     
       </div>
@@ -35,10 +35,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <!--TO DO
   # makePretty
-    # Persist location
     # Add background
-    # Vertically centre
     # Format text
+    # Vertically centre
   # updateOnRefresh
     # Time updates on page refresh.
 -->
