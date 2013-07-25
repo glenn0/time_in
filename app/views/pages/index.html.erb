@@ -13,16 +13,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span6 offset3">
-      <div class="well text-center">
+    <div class="span6 offset3 text-center">
+      <i class="icon-time icon-4x"></i>
+      <br>
+      <div class="well welltweaks">
         <%= form_tag '/time_location' do %>
-          This is the time in <%= text_field_tag :searchTextField, '', :placeholder => session[:location] ? session[:location] : "" %>
-          <br/>
-          <%#= submit_tag "Gimme", class: "btn" %>
+          This is the time in <%= text_field_tag :searchTextField, '', :placeholder => session[:location] ? session[:location] : "" %> .
         <% end %>
       </div>
       <% if session[:time] %>
-        <div class="well text-center">
+        <div class="well welltweaks">
           <%= session[:time] %>      
         </div>
       <% end %>  
@@ -35,8 +35,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <!--TO DO
   # makePretty
-    # Add background
-    # Format text
+    # AJAX
     # Vertically centre
   # updateOnRefresh
     # Time updates on page refresh.
