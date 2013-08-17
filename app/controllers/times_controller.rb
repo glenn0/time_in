@@ -17,7 +17,7 @@ private
     json = ActiveSupport::JSON.decode(response.body)
     session[:lat], session[:long] = json["results"][0]["geometry"]["location"]["lat"], json["results"][0]["geometry"]["location"]["lng"]
   rescue
-    false # For now, fail silently...
+    false
   end
 
   def lookup_raw_time_for_location(lat, long)
@@ -25,7 +25,7 @@ private
     json = ActiveSupport::JSON.decode(response.body)
     session[:raw_time] = json["time"]
   rescue
-    false # For now, fail silently...
+    false
   end
 
   def make_time_pretty(raw_time)
